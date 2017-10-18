@@ -7,79 +7,85 @@ public class Main {
 
     public static void main(String[] args) {
 
-//
         //Prepare to accept user input
         Scanner keyboard = new Scanner(System.in);
-
-        //Create a new Person object
-        Person  newPerson = new Person();
-
-        System.out.print("Enter person's first name:");
-        //Get details from the user
-        newPerson.setFirstName(keyboard.nextLine());
-
-
-        //Output user's input
-        System.out.print("You entered "+newPerson.getFirstName()+" as the person's first name");
-
-
         ArrayList <Person> thePersonList = new ArrayList<Person>();
-        thePersonList.add(newPerson);
+        String yesOrNo="";
 
-//        System.out.println("This is the name entered for the first person:"+thePersonList.get(0).getFirstName());
+//        Doctor drPerson = new Doctor();
+//        drPerson.getMainHospital();
+//
+//        Person drPerson2 = new Doctor();
+//        drPerson2.getMainHospital();
+//
+//        drPerson.setFirstName("First Doctor Name");
+//        drPerson.setLastName("Last Doctor Name");
+//        drPerson.setEmail("email@doctorsemail.com");
+//        drPerson.setPhoneNumber("555-123-DRDR");
+//        drPerson.setAddress("123 Dr Lane");
+//
+//        drPerson2.setFirstName("Second Doctor Name");
+//        drPerson2.setLastName("LastSecond Doctor Name");
+//        drPerson2.setEmail("email@doctorsemail.com");
+//        drPerson2.setPhoneNumber("555-124-DRDR");
+//        drPerson2.setAddress("124 Dr Lane");
 
+        do{
+            Person  newPerson = new Person();
+            System.out.print("Enter person's first name:");
+            newPerson.setFirstName(keyboard.nextLine());
+            thePersonList.add(newPerson);
+
+            do {
+
+                    System.out.print("Do you want to continue?(Y/N)");
+                    yesOrNo=keyboard.nextLine();
+                    if(!yesOrNo.equalsIgnoreCase("y")&& !yesOrNo.equalsIgnoreCase("n"))
+                    {
+                        System.out.println("Invalid option. Please enter 'Y' or 'N' ");
+                    }
+            }while(!yesOrNo.equalsIgnoreCase("y")&&!yesOrNo.equalsIgnoreCase("n"));
+
+        }while(yesOrNo.equalsIgnoreCase("y")||!yesOrNo.equalsIgnoreCase("n"));
+
+//        thePersonList.add(drPerson);
+//        thePersonList.add(drPerson2);
 
         for(Person eachPerson: thePersonList )
         {
+            System.out.println(eachPerson.getFirstName());
+            System.out.println("This person in a member of the "+eachPerson.getClass()+" class");
 
-            eachPerson.getFirstName();
+            if(eachPerson.getClass()==Doctor.class)
+            {
+                System.out.println("This person is a doctor");
+            }
         }
 
 
     }
 
-    public static void testArrayLists()
-    {
-        ArrayList <String> arrayList = new ArrayList<String>();
-        arrayList.add("First String");
-        arrayList.add("Second String");
-        arrayList.add("Third String");
-        arrayList.add("Fourth String");
-        arrayList.add("Fifth String");
-        System.out.println("This arraylist has "+arrayList.size()+" items");
-        for(int counter=0; counter<arrayList.size(); counter++)
-        {
-            System.out.println(arrayList.get(counter));
-        }
 
-        System.out.println(" ");
-
-        for(String eachItem: arrayList )
-        {
-
-            System.out.println(eachItem);
-        }
-
-
-    }
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+//        Get input with a for loop
+//          for(int i=0; i<5; i++)
+//          {
+//            Person  newPerson = new Person();
+//            System.out.print("Enter person's first name:");
+//            newPerson.setFirstName(keyboard.nextLine());
+//            thePersonList.add(newPerson);
 //
-//        for(int counter=0; counter<thePersonList.size(); counter++)
-//        {
-//            System.out.println(thePersonList.get(counter));
-//        }
+//          }
+//
+
+
+
+
+
+
+
+
+
