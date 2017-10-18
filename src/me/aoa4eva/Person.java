@@ -11,8 +11,8 @@ public class Person{
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstName(String firstNameValue) {
+        this.firstName = firstNameValue;
     }
 
     public String getLastName() {
